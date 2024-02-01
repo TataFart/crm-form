@@ -17,45 +17,58 @@
 </head>
 <body>
 
-    <section class="modal">
-        <div class="container">
-            <form action="" class="form">
-                <h1 class="form__title">добавить товар</h1>
+    <div class="overlay">
+        <div class="modal">
+
+            <button class="modal__close" id="close"></button>
+
+            <h3 class="form__title">добавить товар</h1>
+
+        <form action="" class="form" action="https://jsonplaceholder.typicode.com/posts" method="post" name="addProduct">
+                
 
                 <fieldset class="form__fieldset">
-                    <legend class="fieldset__legend visually-hidden">Заполните форму</legend>
+                    
 
                     <label for="name" class="form__label">Наименование</label>
-                    <input type="text" name="name" id="name" class="form__input">
+                    <input type="text" name="name" id="name" class="form__input" required>
                     
                     <label for="category" class="form__label">Категория</label>
-                    <input type="text" id="category"  name="category" class="form__input">
+                    <input type="text" id="category" list="categories"  name="category" class="form__input" required>
+                    
+                    <datalist class="datalist"  name="category" id="categories">
+                        <option class="datalist-item" value="Техника для дома"></option>
+                        <option class="datalist-item" value="Бытовая техника для красоты"></option>
+                        <option class="datalist-item" value="Кухонная бытовая техника"></option>
+                    </datalist>  
                     
                     <label for="unit" class="form__label"> Единицы измерения</label>
-                    <input type="text" id="unit" name="unit" class="form__input">
+                    <input type="text" id="unit" name="unit" class="form__input" required>
 
                                                                   
                     <label for="discont" class="form__label"> Дисконт</label>
-                    <input type="checkbox" id="discont" class="form__ch-box" >
-                    <input type="text"  class="form__input form__input_addition" disabled>
+                    <div class="form__addition">
+                        <input type="checkbox" id="discont" class="form__ch-box" >
+                        <input type="text"  class="form__input form__input_addition" disabled>
+                    </div>
                                                                               
                     <label for="description" class="form__label">Описание</label>
-                    <textarea  id="description" name="description" rows="4" class="form__textarea"></textarea>
+                    <textarea  id="description" name="description" rows="5" class="form__input form__input_resize_none" required></textarea>
                     
                     <label for="amount" class="form__label"> Количество</label>
-                    <input type="number" id="amount" name="amount" class="form__input">
+                    <input type="number" id="amount" name="amount" class="form__input" required>
                     
                     <label for="price" class="form__label">Цена</label>
-                    <input type="text" id="price" name="price" class="form__input">
+                    <input type="text" id="price" name="price" class="form__input" required>
                     
              </fieldset>
 
              <div class="form__submit">
-                <button class="form__submit-btn">Добавить товар</button>
-            </div>
+                <button class="form__submit-btn" type="submit">Добавить товар</button>
+            
             </form>
         </div>
-    </section>
+    </div>
     
 </body>
 </html>
